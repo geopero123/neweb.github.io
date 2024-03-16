@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tbilisi</title>
+    <style>
+  body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+  color: #333;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}   
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+            display: inline;
+        }
+
+        header .buttons {
+            display: inline;
+        }
+
+        header .buttons a {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-left: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        header .buttons a:hover {
+            background-color: #2980b9;
+        }
+
+        #changeColorButton {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-left: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        #changeColorButton:hover {
+            background-color: #2980b9;
+        }
+
+        main {
+            padding: 2rem;
+            margin-bottom: 6rem; /* Add bottom margin for space between main and footer */
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 16px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        #tbilisi {
+    width: 500px;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  #current-time {
+      color: white;
+      font-size: 1.2rem;
+      margin-left: 10px;
+    }
+    </style>
+</head>
+<body id = "message">
+    <header>
+        <h1><a href="georgia.html" style="color: white; text-decoration: none;">Discover Georgia</a></h1>
+        <div class="buttons">
+            <a href="tbilisi.html">Tbilisi</a>
+            <a href="kakheti.html">Kakheti</a>
+            <a href="samegrelo.html">Samegrelo</a>
+            <a href="imereti.html">Imereti</a>
+            <a href="batumi.html">Batumi</a>
+            <button id="changeColorButton">Dark mode</button>
+            <div id="current-time"></div>
+        </div>
+    </header>
+
+    <main>
+        <section id="tbilisi-content">
+            <h2>About Tbilisi</h2>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/1f/Tbilisi_collage.png" alt="Tbilisi" id="tbilisi">
+            <p>Tbilisi, the capital city of Georgia, is known for its unique architecture, rich history, and vibrant cultural scene. With hot sulphur bathing houses, narrow streets, and charming wooden houses, Tbilisi offers a delightful mix of the East and the West. Explore Tbilisi's diverse neighborhoods, visit historical landmarks such as the Narikala Fortress and the Holy Trinity Cathedral, and indulge in delicious Georgian cuisine at local restaurants. Don't miss the opportunity to stroll through the old town area, enjoy panoramic views from the top of the Mtatsminda Park, and experience Tbilisi's bustling nightlife.</p>
+            <h2>Tbilisi events and festivals</h2>
+            <p>Tbilisi hosts numerous cultural events and festivals throughout the year, attracting visitors from around the world. One notable event is the Tbilisi International Film Festival, which showcases a diverse selection of international cinema and offers opportunities for filmmakers to network and engage with audiences. Another highlight is Tbilisoba, an annual festival celebrating the city's rich culture, history, and traditions through music, dance, food, and various cultural activities. These events provide visitors with unique opportunities to immerse themselves in Tbilisi's vibrant cultural scene.</p>
+            <h2>Tbilisi arts and museum</h2>
+            <p> Tbilisi boasts a thriving art scene, with a variety of museums and galleries showcasing both traditional and contemporary artworks. The Georgian National Museum, housed in multiple locations throughout the city, offers insight into Georgia's rich history and cultural heritage through its extensive collection of artifacts and exhibits. The Museum of Fine Arts features works by Georgian and international artists, spanning various periods and styles. Additionally, Tbilisi's art galleries provide platforms for local artists to exhibit their work and contribute to the city's dynamic cultural landscape.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Georgia Website.</p>
+    </footer>
+</body>
+<script>
+    document.getElementById("changeColorButton").addEventListener("click", function() {
+      const messageElement = document.getElementById("message");
+      const isDarkMode = messageElement.style.backgroundColor === "rgb(44, 62, 80)";
+    
+      if (isDarkMode) {
+        messageElement.style.backgroundColor = "white";
+        messageElement.style.color = "black";
+        this.textContent = "Dark mode";
+      } else {
+        messageElement.style.backgroundColor = "rgb(44, 62, 80)";
+        messageElement.style.color = "white";
+        this.textContent = "Bright mode";
+      }
+    });
+        function updateCurrentTime() {
+      const now = new Date();
+      const hours = now.getHours().toString().padStart(2, "0");
+      const minutes = now.getMinutes().toString().padStart(2, "0");
+      const seconds = now.getSeconds().toString().padStart(2, "0");
+      const timeString = `${hours}:${minutes}:${seconds}`;
+    
+      // Get the current-time element and update its content
+      const currentTimeElement = document.getElementById("current-time");
+      currentTimeElement.textContent = timeString;
+    }
+    
+    // Call the updateCurrentTime function every second
+    setInterval(updateCurrentTime, 1000);
+        </script>
+</html>

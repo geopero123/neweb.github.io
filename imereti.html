@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imereti</title>
+    <style>
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+  color: #333;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+            display: inline;
+        }
+
+        header .buttons {
+            display: inline;
+        }
+
+        header .buttons a {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-left: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        header .buttons a:hover {
+            background-color: #2980b9;
+        }
+
+        #changeColorButton {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-left: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        #changeColorButton:hover {
+            background-color: #2980b9;
+        }
+
+        main {
+            padding: 2rem;
+            margin-bottom: 6rem; /* Add bottom margin for space between main and footer */
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 16px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        #Imereti {
+            width: 500px;
+            height: auto;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        #current-time {
+      color: white;
+      font-size: 1.2rem;
+      margin-left: 10px;
+    }
+    </style>
+</head>
+<body id = "message">
+    <header>
+        <h1><a href="georgia.html" style="color: white; text-decoration: none;">Discover Georgia</a></h1>
+        <div class="buttons">
+            <a href="tbilisi.html">Tbilisi</a>
+            <a href="kakheti.html">Kakheti</a>
+            <a href="samegrelo.html">Samegrelo</a>
+            <a href="imereti.html">Imereti</a>
+            <a href="batumi.html">Batumi</a>
+            <button id="changeColorButton">Dark mode</button>
+            <div id="current-time"></div>
+        </div>
+    </header>
+
+    <main>
+        <section id="imereti-content">
+            <h2>About Imereti</h2>
+            <img src="https://upload.wikimedia.org/wikipedia/ka/6/6e/KA2.jpg" alt="Imereti" id="Imereti">
+            <p>Imereti, located in western Georgia, is known for its rich history, stunning landscapes, and diverse cultural heritage. The region is home to ancient historical sites, picturesque mountain ranges, and charming traditional villages.</p>
+            <p>Explore the historic city of Kutaisi, the capital of Imereti, and visit landmarks such as the Bagrati Cathedral, Gelati Monastery, and Prometheus Cave. Discover the natural beauty of the region by exploring attractions like the Sataplia Nature Reserve and Okatse Canyon.</p>
+            <p>Indulge in the delicious cuisine of Imereti, including local specialties such as khachapuri (cheese-filled bread), khinkali (dumplings), and lobio (bean stew). Experience the warm hospitality of the locals and immerse yourself in the rich traditions of the region.</p>
+            <h2>Historical Landmarks</h2>
+            <p>Imereti is home to several notable historical landmarks that date back centuries. One of the most renowned is the UNESCO-listed Gelati Monastery, founded by King David IV in the 12th century and known for its stunning medieval architecture and intricate frescoes. Nearby, visitors can explore the medieval cave city of Vardzia, carved into the cliffsides of the Erusheti Mountain and once home to thousands of monks and craftsmen. Additionally, the city of Kutaisi, Georgia's second-largest city and the ancient capital of the Kingdom of Colchis, boasts a wealth of historical sites, including the Bagrati Cathedral and the Gelati Academy, which served as a center of learning and culture during the Georgian Golden Age.</p>
+            <h2>Natural Wonders</h2>
+            <p>Imereti's diverse landscape encompasses lush forests, fertile valleys, and majestic mountain ranges, offering ample opportunities for outdoor exploration and adventure. Visitors can hike through the pristine wilderness of the Imereti Protected Areas, home to rare flora and fauna, including the endemic Imeretian Salamander. The Sataplia Nature Reserve, famous for its dinosaur footprints and underground caves, provides visitors with a unique glimpse into Georgia's prehistoric past. Additionally, the picturesque Katskhi Pillar, a towering limestone monolith topped with a medieval monastery, offers breathtaking views of the surrounding countryside and serves as a symbol of spiritual devotion and resilience.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Georgia Website.</p>
+    </footer>
+    
+    
+</body>
+<script>
+    document.getElementById("changeColorButton").addEventListener("click", function() {
+      const messageElement = document.getElementById("message");
+      const isDarkMode = messageElement.style.backgroundColor === "rgb(44, 62, 80)";
+    
+      if (isDarkMode) {
+        messageElement.style.backgroundColor = "white";
+        messageElement.style.color = "black";
+        this.textContent = "Dark mode";
+      } else {
+        messageElement.style.backgroundColor = "rgb(44, 62, 80)";
+        messageElement.style.color = "white";
+        this.textContent = "Bright mode";
+      }
+    });
+        function updateCurrentTime() {
+      const now = new Date();
+      const hours = now.getHours().toString().padStart(2, "0");
+      const minutes = now.getMinutes().toString().padStart(2, "0");
+      const seconds = now.getSeconds().toString().padStart(2, "0");
+      const timeString = `${hours}:${minutes}:${seconds}`;
+    
+      // Get the current-time element and update its content
+      const currentTimeElement = document.getElementById("current-time");
+      currentTimeElement.textContent = timeString;
+    }
+    
+    // Call the updateCurrentTime function every second
+    setInterval(updateCurrentTime, 1000);
+        </script>
+</html>

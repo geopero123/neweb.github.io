@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samegrelo</title>
+    <style>
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+  color: #333;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+            display: inline;
+        }
+
+        header .buttons {
+            display: inline;
+        }
+
+        header .buttons a {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-left: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        header .buttons a:hover {
+            background-color: #2980b9;
+        }
+
+        #changeColorButton {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-left: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        #changeColorButton:hover {
+            background-color: #2980b9;
+        }
+
+        main {
+            padding: 2rem;
+            margin-bottom: 6rem; /* Add bottom margin for space between main and footer */
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 16px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        #samegrelo {
+            width: 500px;
+            height: auto;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        #current-time {
+      color: white;
+      font-size: 1.2rem;
+      margin-left: 10px;
+    }
+    </style>
+</head>
+<body id = "message">
+    <header>
+        <h1><a href="georgia.html" style="color: white; text-decoration: none;">Discover Georgia</a></h1>
+        <div class="buttons">
+            <a href="tbilisi.html">Tbilisi</a>
+            <a href="kakheti.html">Kakheti</a>
+            <a href="samegrelo.html">Samegrelo</a>
+            <a href="imereti.html">Imereti</a>
+            <a href="batumi.html">Batumi</a>
+            <button id="changeColorButton">Dark mode</button>
+            <div id="current-time"></div>
+        </div>
+    </header>
+
+    <main>
+        <section id="samegrelo-content">
+            <h2>About Samegrelo</h2>
+            <img src="https://cdn.georgiantravelguide.com/storage/thumbnails/dji-0099-2.jpg" id="samegrelo">
+            <p>Samegrelo, located in western Georgia, is famous for its Black Sea resorts and beautiful mountains. The region is known for its lush green landscapes, ancient historical sites, and unique cultural heritage.</p>
+            <p>Explore Samegrelo's pristine beaches, such as those in Anaklia and Grigoleti, and enjoy a variety of water sports and recreational activities. Visit historical landmarks like the Martvili Canyon, Zugdidi Castle, and the Dadiani Palaces in the city of Zugdidi.</p>
+            <p>Experience the warm hospitality of the locals, savor traditional Samegrelian cuisine, and immerse yourself in the rich traditions and folklore of the region.</p>
+            <h2>Natural Beauty</h2>
+            <p>Samegrelo's landscape is characterized by verdant forests, fertile valleys, and rolling hills, making it a haven for outdoor enthusiasts and nature lovers. The region is home to the breathtaking Martvili Canyon, where visitors can cruise along the emerald-green waters of the Abasha River, passing through towering cliffs and cascading waterfalls. Nearby, the Okatse Canyon offers adrenaline-pumping experiences with its suspended skywalks and panoramic views of the gorge below. Additionally, Samegrelo's diverse flora and fauna provide opportunities for hiking, birdwatching, and exploring pristine wilderness areas.</p>
+            <h2>Culinary Delights</h2>
+            <p>Samegrelo is renowned for its distinctive cuisine, characterized by bold flavors, aromatic spices, and locally sourced ingredients. Visitors can indulge in traditional Samegrelian dishes such as gebjalia (a type of cheese appetizer), mamaliga (cornmeal porridge), and mchadi (cornbread), accompanied by savory walnut sauces and fiery adjika (spicy pepper paste). The region's abundance of fresh produce, including grapes, citrus fruits, and aromatic herbs, lends itself to flavorful dishes that tantalize the taste buds and reflect Samegrelo's agricultural bounty. Visitors can also sample local wines, including the unique Ojaleshi red wine, produced from indigenous grape varietals grown in the region's fertile vineyards.</p>
+            
+        
+        </section>
+    </main>
+
+    <footer>
+        <p>Georgia Website.</p>
+    </footer>
+</body>
+<script>
+    document.getElementById("changeColorButton").addEventListener("click", function() {
+      const messageElement = document.getElementById("message");
+      const isDarkMode = messageElement.style.backgroundColor === "rgb(44, 62, 80)";
+    
+      if (isDarkMode) {
+        messageElement.style.backgroundColor = "white";
+        messageElement.style.color = "black";
+        this.textContent = "Dark mode";
+      } else {
+        messageElement.style.backgroundColor = "rgb(44, 62, 80)";
+        messageElement.style.color = "white";
+        this.textContent = "Bright mode";
+      }
+    });
+        function updateCurrentTime() {
+      const now = new Date();
+      const hours = now.getHours().toString().padStart(2, "0");
+      const minutes = now.getMinutes().toString().padStart(2, "0");
+      const seconds = now.getSeconds().toString().padStart(2, "0");
+      const timeString = `${hours}:${minutes}:${seconds}`;
+    
+      // Get the current-time element and update its content
+      const currentTimeElement = document.getElementById("current-time");
+      currentTimeElement.textContent = timeString;
+    }
+    
+    // Call the updateCurrentTime function every second
+    setInterval(updateCurrentTime, 1000);
+        </script>
+</html>

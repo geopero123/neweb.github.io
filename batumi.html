@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batumi</title>
+    <style>
+  body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+  color: #333;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+            display: inline;
+        }
+
+        header .buttons {
+            display: inline;
+        }
+
+        header .buttons a {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-left: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        header .buttons a:hover {
+            background-color: #2980b9;
+        }
+
+        #changeColorButton {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-left: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        #changeColorButton:hover {
+            background-color: #2980b9;
+        }
+
+        main {
+            padding: 2rem;
+            margin-bottom: 6rem; /* Add bottom margin for space between main and footer */
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 16px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        #batumi {
+    width: 500px;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  #current-time {
+      color: white;
+      font-size: 1.2rem;
+      margin-left: 10px;
+    }
+    </style>
+</head>
+<body id = "message">
+    <header>
+        <h1><a href="georgia.html" style="color: white; text-decoration: none;">Discover Georgia</a></h1>
+        <div class="buttons">
+            <a href="tbilisi.html">Tbilisi</a>
+            <a href="kakheti.html">Kakheti</a>
+            <a href="samegrelo.html">Samegrelo</a>
+            <a href="imereti.html">Imereti</a>
+            <a href="batumi.html">Batumi</a>
+            <button id="changeColorButton">Dark mode</button>
+            <div id="current-time"></div>
+        </div>
+    </header>
+
+    <main>
+        <section id="batumi-content">
+            <h2>About Batumi</h2>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Batumi_sunset_2.jpg" alt="batumi" id="batumi">
+            <p>Batumi is a vibrant seaside city located on the Black Sea coast of Georgia. It is known for its modern architecture, beautiful beaches, and bustling atmosphere.</p>
+            <p>Explore Batumi's iconic landmarks, such as the Alphabetic Tower, Batumi Boulevard, and the Batumi Botanical Garden. Relax on the city's sandy beaches, enjoy a leisurely stroll along the seaside promenade, and take in breathtaking views of the Black Sea.</p>
+            <p>Experience Batumi's vibrant nightlife by visiting its numerous bars, clubs, and restaurants. Don't miss the opportunity to sample delicious Georgian cuisine, including fresh seafood dishes and local specialties like adjarian khachapuri.</p>
+            
+            <h2>Promenade and Beaches</h2>
+            <p>One of Batumi's most iconic features is its picturesque seaside promenade, stretching alo«he coast and offering panoramic views of the Black Sea. Lined with palm trees, colorful flowerbeds, and whimsical sculptures, the promenade provides a scenic backdrop for leisurely strolls, cycling, or simply relaxing by the sea. Visitors can also bask in the sun on Batumi's sandy beaches, where crystal-clear waters invite swimming, sunbathing, and water sports during the summer months.</p>
+            <h2>architectur and Landmarks</h2>
+            <p>Batumi is renowned for its innovative architecture, with a skyline punctuated by futuristic skyscrapers, avant-garde structures, and iconic landmarks. The Batumi Boulevard, featuring the Alphabet Tower and the Ferris wheel, offers panoramic views of the city and the sea. The Batumi Sea Port, with its distinctive lighthouse and marina, serves as a focal point for maritime activities and leisure pursuits. Additionally, the Batumi Botanical Garden, located just outside the city, showcases a diverse collection of flora from around the world and provides a tranquil escape amidst lush greenery and scenic vistas.</p>
+        
+        
+        </section>
+    </main>
+
+    <footer>
+        <p>Georgia Website.</p>
+    </footer>
+
+</body>
+<script>
+    document.getElementById("changeColorButton").addEventListener("click", function() {
+      const messageElement = document.getElementById("message");
+      const isDarkMode = messageElement.style.backgroundColor === "rgb(44, 62, 80)";
+    
+      if (isDarkMode) {
+        messageElement.style.backgroundColor = "white";
+        messageElement.style.color = "black";
+        this.textContent = "Dark mode";
+      } else {
+        messageElement.style.backgroundColor = "rgb(44, 62, 80)";
+        messageElement.style.color = "white";
+        this.textContent = "Bright mode";
+      }
+    });
+        function updateCurrentTime() {
+      const now = new Date();
+      const hours = now.getHours().toString().padStart(2, "0");
+      const minutes = now.getMinutes().toString().padStart(2, "0");
+      const seconds = now.getSeconds().toString().padStart(2, "0");
+      const timeString = `${hours}:${minutes}:${seconds}`;
+    
+      // Get the current-time element and update its content
+      const currentTimeElement = document.getElementById("current-time");
+      currentTimeElement.textContent = timeString;Z
+    }
+    
+    // Call the updateCurrentTime function every second
+    setInterval(updateCurrentTime, 1000);
+        </script>
+</html>

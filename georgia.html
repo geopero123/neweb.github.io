@@ -1,0 +1,188 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Discover Georgia</title>
+        <style>
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+  color: #333;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+    
+            header {
+                background-color: #2c3e50;
+                color: white;
+                padding: 1rem;
+                text-align: center;
+            }
+    
+            header h1 {
+                margin: 0;
+                font-size: 2rem;
+                display: inline;
+            }
+    
+            header .buttons {
+                display: inline;
+            }
+    
+            header .buttons a {
+                background-color: #3498db;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                margin-left: 10px;
+                border-radius: 5px;
+                cursor: pointer;
+                text-decoration: none;
+            }
+    
+            header .buttons a:hover {
+                background-color: #2980b9;
+            }
+    
+            #changeColorButton {
+                background-color: #3498db;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                margin-left: 10px;
+                border-radius: 5px;
+                cursor: pointer;
+                text-decoration: none;
+            }
+    
+            #changeColorButton:hover {
+                background-color: #2980b9;
+            }
+    
+            main {
+                padding: 2rem;
+                margin-bottom: 6rem;
+            }
+    
+            footer {
+                background-color: #2c3e50;
+                color: white;
+                text-align: center;
+                padding: 16px;
+                position: fixed;
+                width: 100%;
+                bottom: 0;
+            }
+    
+            #georgia-map-image {
+                width: 500px;
+                height: auto;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            #current-time {
+      color: white;
+      font-size: 1.2rem;
+      margin-left: 10px;
+    }
+        </style>
+    </head>
+    <body id = "message">
+        <header>
+            <h1>Discover Georgia</h1>
+            <div class="buttons">
+                <a href="tbilisi.html">Tbilisi</a>
+                <a href="kakheti.html">Kakheti</a>
+                <a href="samegrelo.html">Samegrelo</a>
+                <a href="imereti.html">Imereti</a>
+                <a href="batumi.html">Batumi</a>
+                <button id="changeColorButton">Dark mode</button>
+                <div id="current-time"></div>
+            </div>
+        </header>
+
+        <main id="main-content">
+            <!-- Information about Georgia -->
+            <h2>Georgia</h2>
+            <img id="georgia-map-image" src="https://upload.wikimedia.org/wikipedia/commons/6/67/Georgia_%28orthographic_projection_with_inset%29.svg" alt="Map of Georgia">
+            <p>Georgia is situated at the crossroads of Europe and Asia. The country regained its independence in 1991, declaring its aspiration to join the European and Euro-Atlantic world and to regain its place in the European family to which Georgia has always belonged.
+
+                Georgia is situated in the Eastern European region of South Caucasus. In the southeast, it has a border with Azerbaijan, in the south with Armenia and Turkey, and in the north with Russia. The western part of Georgia meets the Black Sea, which connects Georgia physically to the European Union. The ancient capital of Georgia, Tbilisi, was founded in the fifth century.
+                
+                Georgia comprises a total area of 69,700 square kilometres, with a population of 3,720,000. Pristine nature covers the vast part of the country, with 26,060 rivers and over 40 protected areas. With diverse climate zones, Georgia is a year-round destination. Here, subtropical and mild climate zones coexist. In summer the temperature fluctuates from 29 ° C to 33 ° C, with an abundance of sun. Winter temperatures average -2 ° C to 4 ° C.
+                
+                Many famous writers and poets have taken inspiration from Georgia’s stunning nature and astonishing diversity. The country is increasingly popular among foreign travelers. In 2016, more than six million tourists visited Georgia. This is not surprising, as Georgia has just about everything a traveler might dream of: snowcapped mountains guarding clear lakes, alpine meadows, canyons painted by flowers and fruit and defined by rushing rivers, palm coasts, ancient caves, mineral waters and sulfur water pools.  A visitor’s paradise, for sure!</p>
+            <h2>Traditions of Georgia</h2>
+            <p>One of Georgia’s best known national monuments is Kartlis Deda – Mother of Georgia. Her statue stands high above Tbilisi bearing a sword in one hand and a goblet of wine in the other. This represents Georgia’s protective and hospitable attitude towards guests.
+
+                Over centuries, Georgian people developed traditions of, and a reputation for, generosity and hospitality.This can be experienced in a Georgian’s home or in the street, in a village bazaar or on a Tbilisi subway.
+                
+                If a tourist stops a Georgian to ask for directions, the likelihood is that they will be personally escorted to their destination. If the Georgian isn’t sure, the situation instantly becomes a neighborhood affair with everyone in proximity dropping everything to assist until the dilemma is rectified.</p>
+            <h2>Georgian Wine</h2>
+            <p>The Georgian attitude toward wine is summarized in the following stanza of a traditional song:
+                "If you'd had a drink and became sad - You're not a man, you are not a Georgian".
+                
+                For Georgians, wine is not just a drink. Wine strengthens the national spirit and unites guests of traditional Caucasian feasts. Grapevines are mentioned in Georgian legends, stories and songs. Wine in Georgia is a national asset attracting tourists and sommeliers from all over the world.
+                
+                The Georgian tradition of winemaking is thought to have originated approximately eight thousand years ago. Throughout history, winemaking has not only the basis of Georgia’s economy but also a part of its spiritual culture.</p>
+        
+            </main>
+1
+.   
+
+0
+418        <footer>
+             <p>Georgia Website.</p>
+        </footer>
+
+        
+        
+    </body>
+    <script>
+document.getElementById("changeColorButton").addEventListener("click", function() {
+  const messageElement = document.getElementById("message");
+  const isDarkMode = messageElement.style.backgroundColor === "rgb(44, 62, 80)";
+
+  if (isDarkMode) {
+    messageElement.style.backgroundColor = "white";
+    messageElement.style.color = "black";
+    this.textContent = "Dark mode";
+  } else {
+    messageElement.style.backgroundColor = "rgb(44, 62, 80)";
+    messageElement.style.color = "white";
+    this.textContent = "Bright mode";
+  }
+});
+    function updateCurrentTime() {
+  const now = new Date();
+  const hours = now.getHours().toString().padStart(2, "0");
+  const minutes = now.getMinutes().toString().padStart(2, "0");
+  const seconds = now.getSeconds().toString().padStart(2, "0");
+  const timeString = `${hours}:${minutes}:${seconds}`;
+
+  // Get the current-time element and update its content
+  const currentTimeElement = document.getElementById("current-time");
+  currentTimeElement.textContent = timeString;
+}
+
+// Call the updateCurrentTime function every second
+setInterval(updateCurrentTime, 1000);
+    </script>
+    </html>
+
+
+
+
+
+
+
+
+
+
+
+
+    

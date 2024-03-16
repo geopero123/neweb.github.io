@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kakheti</title>
+    <style>
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+  color: #333;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+            display: inline;
+        }
+
+        header .buttons {
+            display: inline;
+        }
+
+        header .buttons a {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-left: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        header .buttons a:hover {
+            background-color: #2980b9;
+        }
+
+        #changeColorButton {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-left: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        #changeColorButton:hover {
+            background-color: #2980b9;
+        }
+
+        main {
+            padding: 2rem;
+            margin-bottom: 6rem; /* Add bottom margin for space between main and footer */
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 16px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        #kakheti {
+            width: 500px;
+            height: auto;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        #current-time {
+      color: white;
+      font-size: 1.2rem;
+      margin-left: 10px;
+    }
+    </style>
+</head>
+<body id = "message">
+    <header>
+        <h1><a href="georgia.html" style="color: white; text-decoration: none;">Discover Georgia</a></h1>
+        <div class="buttons">
+            <a href="tbilisi.html">Tbilisi</a>
+            <a href="kakheti.html">Kakheti</a>
+            <a href="samegrelo.html">Samegrelo</a>
+            <a href="imereti.html">Imereti</a>
+            <a href="batumi.html">Batumi</a>
+            <button id="changeColorButton">Dark mode</button>
+            <div id="current-time"></div>
+        </div>
+    </header>
+
+    <main>
+        <section id="kakheti-content">
+            <h2>About Kakheti</h2>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/17/Black_Rock_Lake_ა.jpg" id="kakheti">
+            <p>Kakheti is a region in eastern Georgia known for its vineyards and wineries. It is often referred to as the "wine region" of Georgia due to its long history of winemaking. Explore the picturesque landscapes of Kakheti, visit traditional wineries, and taste a variety of local wines, including the famous Georgian amber wine, in the charming towns and villages scattered across the region. Don't miss the opportunity to visit historical landmarks such as the Alaverdi Monastery, Bodbe Monastery, and the ancient city of Sighnaghi, known as the "City of Love" for its romantic atmosphere and stunning views of the Alazani Valley.</p>
+            <h2>Wineyards in kakheti</h2>
+            <p>Kakheti's rolling hills and fertile valleys are adorned with vineyards stretching as far as the eye can see. Visitors have the opportunity to explore numerous wineries scattered throughout the region, each offering a unique glimpse into Georgia's winemaking practices. From small family-owned cellars to larger commercial estates, Kakheti boasts a diverse array of wineries where visitors can learn about traditional winemaking techniques, such as the use of qvevri (large clay vessels buried underground), as well as modern production methods.</p>
+            <h2>Cultural attractions</h2>
+            <p>In addition to its vineyards and wineries, Kakheti boasts a wealth of cultural attractions that reflect its rich history and heritage. Visitors can explore ancient monasteries, such as Alaverdi Cathedral and Bodbe Monastery, which stand as architectural masterpieces and spiritual landmarks. The quaint towns and villages of Sighnaghi, Telavi, and Kvareli offer charming streets lined with cobblestone pathways, historic churches, and traditional Georgian architecture, providing visitors with a glimpse into rural Georgian life.</p>
+        
+        
+        </section>
+    </main>
+
+    <footer>
+        <p>Georgia Website.</p>
+    </footer>
+</body>
+<script>
+    document.getElementById("changeColorButton").addEventListener("click", function() {
+      const messageElement = document.getElementById("message");
+      const isDarkMode = messageElement.style.backgroundColor === "rgb(44, 62, 80)";
+    
+      if (isDarkMode) {
+        messageElement.style.backgroundColor = "white";
+        messageElement.style.color = "black";
+        this.textContent = "Dark mode";
+      } else {
+        messageElement.style.backgroundColor = "rgb(44, 62, 80)";
+        messageElement.style.color = "white";
+        this.textContent = "Bright mode";
+      }
+    });
+        function updateCurrentTime() {
+      const now = new Date();
+      const hours = now.getHours().toString().padStart(2, "0");
+      const minutes = now.getMinutes().toString().padStart(2, "0");
+      const seconds = now.getSeconds().toString().padStart(2, "0");
+      const timeString = `${hours}:${minutes}:${seconds}`;
+    
+      // Get the current-time element and update its content
+      const currentTimeElement = document.getElementById("current-time");
+      currentTimeElement.textContent = timeString;
+    }
+    
+    // Call the updateCurrentTime function every second
+    setInterval(updateCurrentTime, 1000);
+        </script>
+</html>
